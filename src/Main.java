@@ -23,7 +23,7 @@ public class Main {
         }
         return c;
     }
-    public static int searchInsert(int[] nums, int target) { // закончить сегодня
+    public static int searchInsert(int[] nums, int target) {
         int index = 0;
         for(int i = 0; i < nums.length - 1; i++) {
             if (target == nums[i]) {
@@ -36,6 +36,18 @@ public class Main {
             else if(target > nums[i] && target < nums[i+1]) {
                     index = i+1;
                 }
+            else if(target == nums[nums.length-1]){
+                index = nums.length-1;
+            }
+        }
+        return index;
+    }
+    public static int searchInsert1(int[] nums, int target){
+        int index = 0;
+        for(int i = 0 ; i < nums.length; i++){
+            if(nums[nums.length / 2] > target){
+
+            }
         }
         return index;
     }
@@ -101,8 +113,11 @@ public class Main {
 //        catch(Exception ex){
 //                System.out.println(ex.getMessage());
 //                }
-        int [] arr = {1,2,4,7};
-        int target = 8;
+
+        int [] arr = {1,2,4,7,8,9,0,4,35,67};
+        int target = 67;
         System.out.println(searchInsert(arr,target));
+
+
                 }
 }
